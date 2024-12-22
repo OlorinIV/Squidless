@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
         maven {
             name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            url = "https://files.minecraftforge.net/maven"
         }
         maven {
             name = "sonatype"
@@ -11,18 +11,18 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {changing = true}
     }
 }
 
 apply plugin: 'forge'
 
-version = "-1.7.10-0.6.1"
+version = "1.7.10-0.7"
 group= "com.hilburn.squidless" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "squidless"
 
 minecraft {
-    version = "1.7.10-10.13.0.1205"
+    version = "1.7.10-10.13.4.1614-1.7.10"
     assetDir = "eclipse/assets"
 }
 
