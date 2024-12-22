@@ -16,15 +16,14 @@ public class SquidHandler {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void squidSpawn(LivingSpawnEvent.CheckSpawn event){
 		if (event.entityLiving.getClass()==squid){
-			if (event.world.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(event.x, event.y, event.z, event.x, event.y, event.z).expand(64D, 64D, 64D)).size()==0)
-				event.setResult(Result.DENY);
+			event.setResult(Result.DENY);
 		}
 	}
 
 	@SubscribeEvent
 	public void squidSpawnPack(LivingPackSizeEvent event){
 		if (event.entityLiving.getClass()==squid){
-			event.maxPackSize=2;
+			event.setResult(Result.DENY);
 		}
 	}
 
